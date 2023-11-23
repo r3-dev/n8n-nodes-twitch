@@ -170,11 +170,16 @@ export class TwitchTrigger implements INodeType {
 					{},
 					{ login: channel }
 				);
+
+				if (userData.data.length === 0 || !userData.data[0].id) {
+					throw new Error("Channel not found");
+				}
+
 				const body = {
 					type: event,
 					version: "1",
 					condition: {
-						broadcaster_user_id: userData.data[0].id ?? "",
+						broadcaster_user_id: userData.data[0].id,
 					},
 					transport: {
 						method: "webhook",
