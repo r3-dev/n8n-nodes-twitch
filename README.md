@@ -1,17 +1,6 @@
-<p align="center">
-  <a href="https://codely.com">
-    <img src="https://user-images.githubusercontent.com/10558907/170513882-a09eee57-7765-4ca4-b2dd-3c2e061fdad0.png" width="300px" height="92px"/>
-  </a>
-</p>
-
 <h1 align="center">
-  🛠 Twitch Trigger node for <code>n8n</code>
+  🛠 Twitch node for <code>n8n</code>
 </h1>
-
-<p align="center">
-    <a href="https://github.com/r3-dev"><img src="https://img.shields.io/badge/r3-dev-OS-green.svg?style=flat-square" alt="Codely Open Source"/></a>
-    <a href="https://pro.codely.com"><img src="https://img.shields.io/badge/r3-dev-PRO-black.svg?style=flat-square" alt="r3-dev Courses"/></a>
-</p>
 
 <p align="center">
   Receive notifications when something happens in your Twitch Stream (or other's). Installing this node you'll be able to trigger automations based on "Stream goes online/offline", "new follow" and some other events.
@@ -42,18 +31,6 @@ Just go to your n8n instance, find the folder where n8n is installed (if you are
 
 - Npm: `npm i @r3-dev/n8n-nodes-twitch`
 - Yarn: `yarn add @r3-dev/n8n-nodes-twitch`
+- Pnpm: `pnpm add @r3-dev/n8n-nodes-twitch`
 
-If you want to create a custom Docker image to have it installed by default (that's what we do), you could use our Dockerfile as a base. Take a look at our custom docker image repo:
-
-<a href="https://github.com/r3-dev/n8n-codely-custom-image">Simple Dockerfile for custom n8n image</a>
-
-# 👌 Codely Code Quality Standards
-
-Publishing this package we are committing ourselves to the following code quality standards:
-
-- 🤝 Respect **Semantic Versioning**: No breaking changes in patch or minor versions
-- 🤏 No surprises in transitive dependencies: Use the **bare minimum dependencies** needed to meet the purpose
-- 🎯 **One specific purpose** to meet without having to carry a bunch of unnecessary other utilities
-- ✅ **Tests** as documentation and usage examples
-- 📖 **Well documented ReadMe** showing how to install and use
-- ⚖️ **License favoring Open Source** and collaboration
+If you want to create a custom Docker image to have it installed by default (that's what we do), you could use our Dockerfile as a base.
