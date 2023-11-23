@@ -1,8 +1,11 @@
-import { OptionsWithUri } from "request";
-
-import { IExecuteFunctions, ILoadOptionsFunctions } from "n8n-core";
-
-import { IDataObject, IHookFunctions, IWebhookFunctions } from "n8n-workflow";
+import {
+	IExecuteFunctions,
+	IDataObject,
+	IHookFunctions,
+	ILoadOptionsFunctions,
+	IWebhookFunctions,
+} from "n8n-workflow";
+import { OptionsWithUri } from "request-promise-native";
 
 export async function twitchApiRequest(
 	this:
@@ -17,8 +20,6 @@ export async function twitchApiRequest(
 	uri?: string,
 	option: IDataObject = {}
 ): Promise<any> {
-	// eslint:disable-line:no-any
-
 	const credentials = (await this.getCredentials("twitchApi")) as IDataObject;
 
 	const clientId = credentials.clientId;
