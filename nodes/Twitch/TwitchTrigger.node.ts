@@ -147,6 +147,7 @@ export class TwitchTrigger implements INodeType {
 					"GET",
 					"/eventsub/subscriptions"
 				);
+				console.log(webhooks);
 				for (const webhook of webhooks) {
 					if (
 						webhook.transport.callback === webhookUrl &&
@@ -171,6 +172,8 @@ export class TwitchTrigger implements INodeType {
 					{ login: channel }
 				);
 
+				console.log(userData);
+
 				if (userData.data.length === 0 || !userData.data[0].id) {
 					throw new Error("Channel not found");
 				}
@@ -193,11 +196,14 @@ export class TwitchTrigger implements INodeType {
 					"/eventsub/subscriptions",
 					body
 				);
+				console.log(webhook);
+
 				webhookData.webhookId = webhook.data[0].id;
 				return true;
 			},
 			async delete(this: IHookFunctions): Promise<boolean> {
 				const webhookData = this.getWorkflowStaticData("node");
+				console.log("delete webhook", webhookData.webhookId);
 				try {
 					await twitchApiRequest.call(
 						this,
@@ -219,6 +225,8 @@ export class TwitchTrigger implements INodeType {
 		const bodyData = this.getBodyData() as IDataObject;
 		const res = this.getResponseObject();
 		const req = this.getRequestObject();
+		console.log("webhook data");
+		console.dir(bodyData);
 
 		// Check if we're getting twitch challenge request to validate the webhook that has been created.
 		if (bodyData["challenge"]) {
