@@ -28,7 +28,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run watch",
-    "build": "tsc && gulp",
+    "build": "tsc && gulp build:icons",
     "lint": "eslint -p tsconfig.json -c eslint.json",
     "lintfix": "eslint --fix -p tsconfig.json -c eslint.json",
     "nodelinter": "nodelinter",
