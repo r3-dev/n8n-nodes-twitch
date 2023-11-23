@@ -1,6 +1,6 @@
 {
   "name": "@r3-dev/n8n-nodes-twitch",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "n8n node for Twitch: Execute workflows on stream start, stream end, and new follows.",
   "keywords": [
     "n8n",
