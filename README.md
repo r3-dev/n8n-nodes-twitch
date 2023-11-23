@@ -9,8 +9,8 @@
 </h1>
 
 <p align="center">
-    <a href="https://github.com/CodelyTV"><img src="https://img.shields.io/badge/CodelyTV-OS-green.svg?style=flat-square" alt="Codely Open Source"/></a>
-    <a href="https://pro.codely.com"><img src="https://img.shields.io/badge/CodelyTV-PRO-black.svg?style=flat-square" alt="CodelyTV Courses"/></a>
+    <a href="https://github.com/r3-dev"><img src="https://img.shields.io/badge/r3-dev-OS-green.svg?style=flat-square" alt="Codely Open Source"/></a>
+    <a href="https://pro.codely.com"><img src="https://img.shields.io/badge/r3-dev-PRO-black.svg?style=flat-square" alt="r3-dev Courses"/></a>
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
   <br />
   <br />
   Take a look, play and have fun with this.
-  <a href="https://github.com/CodelyTV/n8n-nodes-twitch/stargazers">Stars are welcome 😊</a>
+  <a href="https://github.com/r3-dev/n8n-nodes-twitch/stargazers">Stars are welcome 😊</a>
 </p>
 
 # 👀 Usage example
@@ -40,12 +40,12 @@ Once it's installed, it will appear in the components palette, as any other comp
 
 Just go to your n8n instance, find the folder where n8n is installed (if you are using the standard Docker installation, it will probably be: /usr/local/lib/node_modules/n8n) and install the package as any other npm package:
 
-- Npm: `npm i @codelytv/n8n-nodes-twitch`
-- Yarn: `yarn add @codelytv/n8n-nodes-twitch`
+- Npm: `npm i @r3-dev/n8n-nodes-twitch`
+- Yarn: `yarn add @r3-dev/n8n-nodes-twitch`
 
 If you want to create a custom Docker image to have it installed by default (that's what we do), you could use our Dockerfile as a base. Take a look at our custom docker image repo:
 
- <a href="https://github.com/CodelyTV/n8n-codely-custom-image">Simple Dockerfile for custom n8n image</a>
+<a href="https://github.com/r3-dev/n8n-codely-custom-image">Simple Dockerfile for custom n8n image</a>
 
 # 👌 Codely Code Quality Standards
 
@@ -57,4 +57,3 @@ Publishing this package we are committing ourselves to the following code qualit
 - ✅ **Tests** as documentation and usage examples
 - 📖 **Well documented ReadMe** showing how to install and use
 - ⚖️ **License favoring Open Source** and collaboration
-
