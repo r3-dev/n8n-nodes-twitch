@@ -1,9 +1,6 @@
 import {
-	ICredentialsDecrypted,
-	ICredentialTestFunctions,
 	IDataObject,
 	IHookFunctions,
-	INodeCredentialTestResult,
 	INodeType,
 	INodeTypeDescription,
 	IWebhookFunctions,
@@ -80,60 +77,6 @@ export class TwitchTrigger implements INodeType {
 				default: "",
 			},
 		],
-	};
-
-	methods = {
-		credentialTest: {
-			async testTwitchAuth(
-				this: ICredentialTestFunctions,
-				credential: ICredentialsDecrypted
-			): Promise<INodeCredentialTestResult> {
-				const credentials = credential.data;
-
-				if (!credentials) {
-					return {
-						status: "Error",
-						message: "No credentials got returned",
-					};
-				}
-
-				const optionsForAppToken = {
-					headers: {
-						"Content-Type": "application/json",
-					},
-					method: "POST",
-					qs: {
-						client_id: credentials.clientId,
-						client_secret: credentials.clientSecret,
-						grant_type: "client_credentials",
-					},
-					uri: "https://id.twitch.tv/oauth2/token",
-					json: true,
-				};
-
-				try {
-					const response = await this.helpers.request(optionsForAppToken);
-					if (!response.access_token) {
-						return {
-							status: "Error",
-							message: "AccessToken not received",
-						};
-					}
-				} catch (err: unknown) {
-					if (err instanceof Error) {
-						return {
-							status: "Error",
-							message: `Error getting access token; ${err.message}`,
-						};
-					}
-				}
-
-				return {
-					status: "OK",
-					message: "Authentication successful!",
-				};
-			},
-		},
 	};
 
 	webhookMethods = {
